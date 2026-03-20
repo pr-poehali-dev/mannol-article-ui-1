@@ -183,8 +183,8 @@ export default function Index() {
       </header>
 
       {/* BREADCRUMB */}
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "16px 24px" }}>
-        <div className="flex items-center gap-2" style={{ fontSize: 13, color: "#8A8FA8" }}>
+      <div className="mannol-breadcrumb-wrap" style={{ maxWidth: 1200, margin: "0 auto", padding: "16px 24px" }}>
+        <div className="mannol-breadcrumb flex items-center gap-2" style={{ fontSize: 13, color: "#8A8FA8" }}>
           <a href="#" style={{ color: "#8A8FA8", textDecoration: "none" }}>Главная</a>
           <Icon name="ChevronRight" size={14} />
           <a href="#" style={{ color: "#8A8FA8", textDecoration: "none" }}>Новости</a>
@@ -194,8 +194,9 @@ export default function Index() {
       </div>
 
       {/* HERO */}
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px 40px" }}>
+      <div className="mannol-hero-wrap" style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px 40px" }}>
         <div
+          className="mannol-hero"
           style={{
             borderRadius: 16,
             overflow: "hidden",
@@ -225,7 +226,7 @@ export default function Index() {
                 "linear-gradient(90deg, rgba(46,47,91,0.93) 0%, rgba(46,47,91,0.65) 60%, rgba(46,47,91,0.25) 100%)",
             }}
           />
-          <div style={{ position: "relative", zIndex: 2, padding: "48px 56px", maxWidth: 640 }}>
+          <div className="mannol-hero-content" style={{ position: "relative", zIndex: 2, padding: "48px 56px", maxWidth: 640 }}>
             <span
               style={{
                 display: "inline-block",
@@ -258,7 +259,7 @@ export default function Index() {
               полный цикл производства<br />
               на заводах MANNOL
             </h1>
-            <div className="flex items-center gap-6" style={{ flexWrap: "wrap", gap: 16 }}>
+            <div className="mannol-hero-meta flex items-center gap-6" style={{ flexWrap: "wrap", gap: 16 }}>
               {[
                 { icon: "Calendar", text: "19 марта 2025" },
                 { icon: "Clock", text: "8 мин. чтения" },
@@ -291,6 +292,7 @@ export default function Index() {
         <div className="flex flex-col gap-6">
           {/* Article body */}
           <div
+            className="mannol-article-card"
             style={{
               backgroundColor: "#FFFFFF",
               borderRadius: 12,
@@ -300,7 +302,7 @@ export default function Index() {
           >
             {/* Author row */}
             <div
-              className="flex items-center gap-3"
+              className="mannol-article-author flex items-center gap-3"
               style={{
                 paddingBottom: 24,
                 marginBottom: 32,
@@ -331,7 +333,7 @@ export default function Index() {
                 </div>
                 <div style={{ fontSize: 12, color: "#8A8FA8" }}>Технический редактор MANNOL</div>
               </div>
-              <div className="flex items-center gap-2 ml-auto">
+              <div className="mannol-article-author-actions flex items-center gap-2 ml-auto">
                 {[
                   { icon: "Share2", label: "Поделиться" },
                   { icon: "Bookmark", label: "Сохранить" },
@@ -520,6 +522,7 @@ export default function Index() {
 
           {/* GALLERY */}
           <div
+            className="mannol-gallery-card"
             style={{
               backgroundColor: "#FFFFFF",
               borderRadius: 12,
@@ -539,6 +542,7 @@ export default function Index() {
               Фотогалерея
             </h3>
             <div
+              className="mannol-gallery-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(2, 1fr)",
@@ -593,6 +597,7 @@ export default function Index() {
 
           {/* Tags */}
           <div
+            className="mannol-tags-card"
             style={{
               backgroundColor: "#FFFFFF",
               borderRadius: 12,
@@ -639,6 +644,7 @@ export default function Index() {
         <aside className="flex flex-col gap-6">
           {/* Related news */}
           <div
+            className="mannol-sidebar-card"
             style={{
               backgroundColor: "#FFFFFF",
               borderRadius: 12,
@@ -725,6 +731,7 @@ export default function Index() {
 
           {/* Download CTA */}
           <div
+            className="mannol-sidebar-card"
             style={{
               backgroundColor: "#FFFBE6",
               borderRadius: 12,
@@ -786,6 +793,7 @@ export default function Index() {
 
           {/* Stats */}
           <div
+            className="mannol-sidebar-card"
             style={{
               backgroundColor: "#2E2F5B",
               borderRadius: 12,
@@ -849,7 +857,7 @@ export default function Index() {
       </div>
 
       {/* CTA SUBSCRIPTION */}
-      <div style={{ padding: "0 24px 60px" }}>
+      <div className="mannol-sub-outer" style={{ padding: "0 24px 60px" }}>
         <div
           className="mannol-cta"
           style={{
@@ -910,7 +918,7 @@ export default function Index() {
             </p>
           </div>
           <div>
-            <div className="flex gap-3" style={{ marginBottom: 10 }}>
+            <div className="mannol-sub-form flex gap-3" style={{ marginBottom: 10 }}>
               <input
                 type="email"
                 placeholder="Ваш email адрес"
@@ -956,7 +964,7 @@ export default function Index() {
       </div>
 
       {/* FOOTER */}
-      <footer style={{ backgroundColor: "#2E2F5B", padding: "56px 24px 32px" }}>
+      <footer className="mannol-footer-outer" style={{ backgroundColor: "#2E2F5B", padding: "56px 24px 32px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div
             className="mannol-footer"
@@ -1062,13 +1070,13 @@ export default function Index() {
           </div>
 
           <div
-            className="flex items-center justify-between"
+            className="mannol-footer-bottom flex items-center justify-between"
             style={{ paddingTop: 28, flexWrap: "wrap", gap: 12 }}
           >
             <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>
               © 2025 MANNOL GmbH & Co. KG. Все права защищены.
             </span>
-            <div className="flex gap-6" style={{ flexWrap: "wrap", gap: 16 }}>
+            <div className="mannol-footer-links flex gap-6" style={{ flexWrap: "wrap", gap: 16 }}>
               {["Политика конфиденциальности", "Условия использования", "Правовая информация"].map(
                 (link) => (
                   <a
@@ -1093,13 +1101,166 @@ export default function Index() {
       </footer>
 
       <style>{`
+        /* ── Tablet 768px ── */
         @media (max-width: 900px) {
-          .mannol-grid { grid-template-columns: 1fr !important; }
-          .mannol-cta { grid-template-columns: 1fr !important; padding: 32px !important; gap: 32px !important; }
-          .mannol-footer { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+          .mannol-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .mannol-cta {
+            grid-template-columns: 1fr !important;
+            padding: 32px 28px !important;
+            gap: 28px !important;
+          }
+          .mannol-footer {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 32px !important;
+          }
         }
-        @media (max-width: 580px) {
-          .mannol-footer { grid-template-columns: 1fr !important; }
+
+        /* ── Global box-sizing ── */
+        * { box-sizing: border-box; }
+
+        /* ── Mobile 360px ── */
+        @media (max-width: 480px) {
+          /* Layout */
+          .mannol-grid {
+            padding: 0 12px 40px !important;
+            gap: 16px !important;
+          }
+          .mannol-breadcrumb-wrap {
+            padding: 10px 12px !important;
+          }
+          .mannol-cta {
+            padding: 24px 16px !important;
+            gap: 20px !important;
+          }
+          .mannol-footer {
+            grid-template-columns: 1fr !important;
+            gap: 28px !important;
+          }
+
+          /* Hero */
+          .mannol-hero-wrap {
+            padding: 0 12px 24px !important;
+          }
+          .mannol-hero {
+            min-height: 280px !important;
+            border-radius: 10px !important;
+          }
+          .mannol-hero-content {
+            padding: 24px 20px !important;
+            max-width: 100% !important;
+          }
+          .mannol-hero-meta {
+            gap: 10px !important;
+          }
+
+          /* Article card */
+          .mannol-article-card {
+            padding: 24px 16px !important;
+            border-radius: 10px !important;
+          }
+          .mannol-article-author {
+            flex-wrap: wrap !important;
+            gap: 8px !important;
+          }
+          .mannol-article-author-actions {
+            margin-left: 0 !important;
+            width: 100% !important;
+            justify-content: flex-start !important;
+          }
+
+          /* Gallery */
+          .mannol-gallery-card {
+            padding: 20px 16px !important;
+            border-radius: 10px !important;
+          }
+          .mannol-gallery-grid {
+            grid-template-columns: 1fr !important;
+            gap: 8px !important;
+          }
+
+          /* Tags */
+          .mannol-tags-card {
+            padding: 16px !important;
+          }
+
+          /* Sidebar */
+          .mannol-sidebar-card {
+            padding: 20px 16px !important;
+            border-radius: 10px !important;
+          }
+
+          /* Subscription */
+          .mannol-sub-form {
+            flex-direction: column !important;
+            gap: 10px !important;
+          }
+          .mannol-sub-form input {
+            width: 100% !important;
+          }
+          .mannol-sub-form button {
+            width: 100% !important;
+            text-align: center !important;
+          }
+
+          /* Footer */
+          .mannol-footer-outer {
+            padding: 36px 12px 24px !important;
+          }
+          .mannol-footer-bottom {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 10px !important;
+          }
+          .mannol-footer-links {
+            flex-direction: column !important;
+            gap: 8px !important;
+          }
+          /* Subscription outer */
+          .mannol-sub-outer {
+            padding: 0 12px 36px !important;
+          }
+
+          /* Breadcrumb */
+          .mannol-breadcrumb {
+            padding: 12px !important;
+            font-size: 11px !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            white-space: nowrap !important;
+          }
+
+          /* CTA subscription headline */
+          .mannol-cta h2 {
+            font-size: 20px !important;
+          }
+        }
+
+        /* ── Tablet-only 480px–900px tweaks ── */
+        @media (min-width: 481px) and (max-width: 900px) {
+          .mannol-hero-wrap {
+            padding: 0 16px 28px !important;
+          }
+          .mannol-hero {
+            min-height: 340px !important;
+          }
+          .mannol-hero-content {
+            padding: 32px 36px !important;
+            max-width: 90% !important;
+          }
+          .mannol-article-card {
+            padding: 28px 28px !important;
+          }
+          .mannol-gallery-card {
+            padding: 24px 24px !important;
+          }
+          .mannol-tags-card {
+            padding: 16px 24px !important;
+          }
+          .mannol-sidebar-card {
+            padding: 24px 20px !important;
+          }
         }
       `}</style>
     </div>
