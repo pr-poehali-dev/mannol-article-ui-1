@@ -99,20 +99,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-@media (max-width: 640px) {
-  .mannol-prod-btns {
-    flex-direction: column !important;
-    width: 100%;
-  }
-  .mannol-prod-btns button {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .mannol-prod-btns {
-    gap: 6px !important;
-  }
-}

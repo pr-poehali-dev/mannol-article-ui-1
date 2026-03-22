@@ -505,14 +505,16 @@ export default function Index() {
                 ].map((prod, i) => (
                   <div
                     key={i}
-                    className="flex gap-4"
                     style={{
                       backgroundColor: i % 2 === 0 ? "#FFFFFF" : "#FAFBFF",
                       border: "1px solid #EDEEF5",
                       borderRadius: 12,
                       padding: "16px 20px",
                       boxShadow: "0 2px 10px rgba(46,47,91,0.05)",
+                      display: "grid",
+                      gridTemplateColumns: "80px 1fr auto",
                       alignItems: "center",
+                      gap: 16,
                     }}
                   >
                     {/* Image */}
@@ -522,8 +524,8 @@ export default function Index() {
                         height: 80,
                         borderRadius: 10,
                         overflow: "hidden",
-                        flexShrink: 0,
                         backgroundColor: "#F5F6FA",
+                        flexShrink: 0,
                       }}
                     >
                       <img
@@ -534,8 +536,8 @@ export default function Index() {
                     </div>
 
                     {/* Info */}
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div className="flex items-center gap-2" style={{ marginBottom: 5 }}>
+                    <div style={{ minWidth: 0 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 5, flexWrap: "wrap" }}>
                         <span
                           style={{
                             backgroundColor: "#2E2F5B",
@@ -547,11 +549,12 @@ export default function Index() {
                             textTransform: "uppercase",
                             padding: "2px 8px",
                             borderRadius: 4,
+                            whiteSpace: "nowrap",
                           }}
                         >
                           {prod.badge}
                         </span>
-                        <span style={{ fontSize: 11, color: "#B0B3C8", fontFamily: "'Montserrat', sans-serif", fontWeight: 500 }}>
+                        <span style={{ fontSize: 11, color: "#B0B3C8", fontFamily: "'Montserrat', sans-serif", fontWeight: 500, whiteSpace: "nowrap" }}>
                           {prod.api}
                         </span>
                       </div>
@@ -572,19 +575,20 @@ export default function Index() {
                     </div>
 
                     {/* Buttons */}
-                    <div className="flex items-center gap-2 mannol-prod-btns" style={{ flexShrink: 0 }}>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 6, alignItems: "stretch", minWidth: 140 }}>
                       <button
                         style={{
                           backgroundColor: "transparent",
                           color: "#2E2F5B",
                           border: "1.5px solid #DDDFE8",
                           borderRadius: 8,
-                          padding: "8px 14px",
+                          padding: "7px 14px",
                           fontFamily: "'Montserrat', sans-serif",
                           fontWeight: 600,
                           fontSize: 12,
                           cursor: "pointer",
                           whiteSpace: "nowrap",
+                          textAlign: "center",
                         }}
                         onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#2E2F5B")}
                         onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#DDDFE8")}
@@ -597,12 +601,13 @@ export default function Index() {
                           color: "#2E2F5B",
                           border: "none",
                           borderRadius: 8,
-                          padding: "8px 14px",
+                          padding: "7px 14px",
                           fontFamily: "'Montserrat', sans-serif",
                           fontWeight: 700,
                           fontSize: 12,
                           cursor: "pointer",
                           whiteSpace: "nowrap",
+                          textAlign: "center",
                         }}
                       >
                         Купить на Ozon
@@ -613,12 +618,13 @@ export default function Index() {
                           color: "#FFFFFF",
                           border: "none",
                           borderRadius: 8,
-                          padding: "8px 14px",
+                          padding: "7px 14px",
                           fontFamily: "'Montserrat', sans-serif",
                           fontWeight: 700,
                           fontSize: 12,
                           cursor: "pointer",
                           whiteSpace: "nowrap",
+                          textAlign: "center",
                         }}
                       >
                         Wildberries
