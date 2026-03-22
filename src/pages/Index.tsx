@@ -5,6 +5,8 @@ const HERO_IMG =
   "https://cdn.poehali.dev/projects/fa703251-f87d-4ce2-a5fa-ea44172dd82d/files/8448edb7-212f-49ab-ae53-974cb0e3ec28.jpg";
 const PRODUCT_IMG =
   "https://cdn.poehali.dev/projects/fa703251-f87d-4ce2-a5fa-ea44172dd82d/files/d3e2ba77-d95e-484d-aa8d-20c06d83f9f1.jpg";
+const PRODUCT_OIL_IMG =
+  "https://cdn.poehali.dev/projects/fa703251-f87d-4ce2-a5fa-ea44172dd82d/files/cfc1f891-4f87-46a2-98fc-9dea12f847f2.jpg";
 const LAB_IMG =
   "https://cdn.poehali.dev/projects/fa703251-f87d-4ce2-a5fa-ea44172dd82d/files/a5d8137a-45b9-43c9-a799-7a86019c8c37.jpg";
 const FACTORY_IMG =
@@ -81,7 +83,7 @@ export default function Index() {
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
-            {["Каталог", "Выбор продукта", "Новости", "Контакты"].map((item) => (
+            {["Каталог", "Выбор продукта", "Подбор масла", "Новости", "Контакты"].map((item) => (
               <a
                 key={item}
                 href="#"
@@ -160,7 +162,7 @@ export default function Index() {
               borderTop: "1px solid rgba(255,255,255,0.1)",
             }}
           >
-            {["Каталог", "Выбор продукта", "Новости", "Контакты"].map((item) => (
+            {["Каталог", "Выбор продукта", "Подбор масла", "Новости", "Контакты"].map((item) => (
               <a
                 key={item}
                 href="#"
@@ -642,6 +644,259 @@ export default function Index() {
 
         {/* RIGHT — SIDEBAR */}
         <aside className="flex flex-col gap-6">
+
+          {/* PRODUCT RECOMMENDATION CARD */}
+          <div
+            className="mannol-sidebar-card"
+            style={{
+              backgroundColor: "#FFFFFF",
+              borderRadius: 12,
+              padding: "24px",
+              boxShadow: "0 2px 20px rgba(46,47,91,0.09)",
+              border: "1px solid #EDEEF5",
+            }}
+          >
+            {/* Header */}
+            <div style={{ marginBottom: 18 }}>
+              <h3
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 700,
+                  fontSize: 15,
+                  color: "#2E2F5B",
+                  marginBottom: 4,
+                  display: "inline-block",
+                  paddingBottom: 10,
+                  borderBottom: "3px solid #FFD100",
+                }}
+              >
+                Рекомендуем к статье
+              </h3>
+              <p style={{ fontSize: 12, color: "#8A8FA8", marginTop: 10 }}>
+                на месте каталога — продукт с кнопками маркетплейсов
+              </p>
+            </div>
+
+            {/* Product image */}
+            <div
+              style={{
+                borderRadius: 10,
+                overflow: "hidden",
+                marginBottom: 16,
+                backgroundColor: "#F5F6FA",
+                height: 180,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <img
+                src={PRODUCT_OIL_IMG}
+                alt="MANNOL Extreme 5W-40"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </div>
+
+            {/* Product name */}
+            <div style={{ marginBottom: 12 }}>
+              <div
+                style={{
+                  display: "inline-block",
+                  backgroundColor: "#2E2F5B",
+                  color: "#FFD100",
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 700,
+                  fontSize: 10,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  padding: "3px 8px",
+                  borderRadius: 4,
+                  marginBottom: 8,
+                }}
+              >
+                Моторное масло
+              </div>
+              <h4
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 800,
+                  fontSize: 17,
+                  color: "#2E2F5B",
+                  lineHeight: 1.25,
+                  marginBottom: 6,
+                }}
+              >
+                MANNOL Extreme 5W-40
+              </h4>
+              <p style={{ fontSize: 13, color: "#5A5C7A", lineHeight: 1.6 }}>
+                Для современных бензиновых и дизельных двигателей. API SN/CF · ACEA A3/B4.
+              </p>
+            </div>
+
+            {/* Rating */}
+            <div className="flex items-center gap-2" style={{ marginBottom: 18 }}>
+              <div className="flex gap-0.5">
+                {[1,2,3,4,5].map((s) => (
+                  <span key={s} style={{ color: "#FFD100", fontSize: 14, lineHeight: 1 }}>★</span>
+                ))}
+              </div>
+              <span style={{ fontSize: 12, color: "#8A8FA8" }}>4.9 · 1 280 отзывов</span>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex flex-col gap-2">
+              <button
+                style={{
+                  backgroundColor: "transparent",
+                  color: "#2E2F5B",
+                  border: "2px solid #EDEEF5",
+                  borderRadius: 8,
+                  padding: "10px 16px",
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 600,
+                  fontSize: 13,
+                  cursor: "pointer",
+                  textAlign: "left",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                  transition: "border-color 0.2s",
+                }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#2E2F5B")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#EDEEF5")}
+              >
+                <Icon name="BookOpen" size={14} />
+                Читать подробнее →
+              </button>
+
+              <button
+                style={{
+                  backgroundColor: "#FFD100",
+                  color: "#2E2F5B",
+                  border: "none",
+                  borderRadius: 8,
+                  padding: "11px 16px",
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 700,
+                  fontSize: 13,
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 7,
+                }}
+              >
+                <Icon name="ShoppingCart" size={14} />
+                Купить на Ozon
+              </button>
+
+              <button
+                style={{
+                  backgroundColor: "#7B2FBE",
+                  color: "#FFFFFF",
+                  border: "none",
+                  borderRadius: 8,
+                  padding: "11px 16px",
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 700,
+                  fontSize: 13,
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 7,
+                }}
+              >
+                <Icon name="ShoppingBag" size={14} />
+                Wildberries
+              </button>
+            </div>
+
+            <p style={{ fontSize: 11, color: "#B0B3C8", textAlign: "center", marginTop: 10 }}>
+              Переход на маркетплейс
+            </p>
+          </div>
+
+          {/* ALSO INTERESTING */}
+          <div
+            className="mannol-sidebar-card"
+            style={{
+              backgroundColor: "#FFFFFF",
+              borderRadius: 12,
+              padding: "24px",
+              boxShadow: "0 2px 16px rgba(46,47,91,0.06)",
+            }}
+          >
+            <h3
+              style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 700,
+                fontSize: 15,
+                color: "#2E2F5B",
+                marginBottom: 20,
+                display: "inline-block",
+                paddingBottom: 10,
+                borderBottom: "3px solid #FFD100",
+              }}
+            >
+              Также вам будет интересно
+            </h3>
+            <div className="flex flex-col gap-3">
+              {[
+                { title: "5W-30 vs 5W-40: какое масло выбрать для вашего авто?", tag: "Гайд", img: LAB_IMG },
+                { title: "Допуски BMW Longlife: что означают и зачем нужны", tag: "Технологии", img: FACTORY_IMG },
+                { title: "Топ-5 масел для турбированных двигателей 2025", tag: "Рейтинг", img: PRODUCT_IMG },
+              ].map((art, i) => (
+                <div
+                  key={i}
+                  className="flex gap-3"
+                  style={{ cursor: "pointer", paddingBottom: i < 2 ? 12 : 0, borderBottom: i < 2 ? "1px solid #EDEEF5" : "none" }}
+                >
+                  <div
+                    style={{
+                      borderRadius: 6,
+                      overflow: "hidden",
+                      flexShrink: 0,
+                      width: 64,
+                      height: 52,
+                    }}
+                  >
+                    <img src={art.img} alt={art.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  </div>
+                  <div>
+                    <span
+                      style={{
+                        fontSize: 10,
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontWeight: 700,
+                        color: "#FFD100",
+                        backgroundColor: "#2E2F5B",
+                        padding: "2px 7px",
+                        borderRadius: 3,
+                        letterSpacing: "0.05em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {art.tag}
+                    </span>
+                    <p
+                      style={{
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontWeight: 600,
+                        fontSize: 12,
+                        color: "#2E2F5B",
+                        lineHeight: 1.4,
+                        marginTop: 5,
+                      }}
+                    >
+                      {art.title}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Related news */}
           <div
             className="mannol-sidebar-card"
@@ -910,7 +1165,7 @@ export default function Index() {
                 lineHeight: 1.25,
               }}
             >
-              Будьте в курсе новинок MANNOL
+              Будьте в курсе инноваций MANNOL
             </h2>
             <p style={{ fontSize: 14, color: "#5A5C7A", lineHeight: 1.75 }}>
               Получайте первыми информацию о новых продуктах, технических обновлениях
