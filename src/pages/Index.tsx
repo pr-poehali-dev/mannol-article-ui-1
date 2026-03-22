@@ -449,6 +449,186 @@ export default function Index() {
               </div>
             </div>
 
+            {/* ─── YELLOW DIVIDER ─── */}
+            <div
+              style={{
+                height: 3,
+                backgroundColor: "#FFD100",
+                borderRadius: 2,
+                margin: "36px 0 32px",
+              }}
+            />
+
+            {/* ─── RECOMMENDED PRODUCTS ─── */}
+            <div style={{ marginBottom: 36 }}>
+              {/* Section title */}
+              <div className="flex items-center gap-3" style={{ marginBottom: 20 }}>
+                <span
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 800,
+                    fontSize: 11,
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    color: "#2E2F5B",
+                  }}
+                >
+                  Рекомендуем к этому разделу
+                </span>
+                <div style={{ flex: 1, height: 1, backgroundColor: "#EDEEF5" }} />
+              </div>
+
+              {/* Product cards */}
+              <div className="flex flex-col gap-3">
+                {[
+                  {
+                    img: PRODUCT_OIL_IMG,
+                    badge: "Минеральное",
+                    name: "MANNOL 7715 Special",
+                    desc: "Для классических двигателей с пробегом от 100 000 км",
+                    api: "API SL/CF · SAE 10W-40",
+                  },
+                  {
+                    img: PRODUCT_IMG,
+                    badge: "Полусинтетика",
+                    name: "MANNOL 7706 Classic",
+                    desc: "Универсальное масло для бензиновых и дизельных двигателей",
+                    api: "API SL/CF · SAE 10W-40",
+                  },
+                  {
+                    img: LAB_IMG,
+                    badge: "Синтетика",
+                    name: "MANNOL 7915 Extreme",
+                    desc: "Высокоэффективное масло для форсированных двигателей",
+                    api: "API SN/CF · SAE 5W-40",
+                  },
+                ].map((prod, i) => (
+                  <div
+                    key={i}
+                    className="flex gap-4"
+                    style={{
+                      backgroundColor: i % 2 === 0 ? "#FFFFFF" : "#FAFBFF",
+                      border: "1px solid #EDEEF5",
+                      borderRadius: 12,
+                      padding: "16px 20px",
+                      boxShadow: "0 2px 10px rgba(46,47,91,0.05)",
+                      alignItems: "center",
+                    }}
+                  >
+                    {/* Image */}
+                    <div
+                      style={{
+                        width: 80,
+                        height: 80,
+                        borderRadius: 10,
+                        overflow: "hidden",
+                        flexShrink: 0,
+                        backgroundColor: "#F5F6FA",
+                      }}
+                    >
+                      <img
+                        src={prod.img}
+                        alt={prod.name}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      />
+                    </div>
+
+                    {/* Info */}
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div className="flex items-center gap-2" style={{ marginBottom: 5 }}>
+                        <span
+                          style={{
+                            backgroundColor: "#2E2F5B",
+                            color: "#FFD100",
+                            fontFamily: "'Montserrat', sans-serif",
+                            fontWeight: 700,
+                            fontSize: 10,
+                            letterSpacing: "0.07em",
+                            textTransform: "uppercase",
+                            padding: "2px 8px",
+                            borderRadius: 4,
+                          }}
+                        >
+                          {prod.badge}
+                        </span>
+                        <span style={{ fontSize: 11, color: "#B0B3C8", fontFamily: "'Montserrat', sans-serif", fontWeight: 500 }}>
+                          {prod.api}
+                        </span>
+                      </div>
+                      <div
+                        style={{
+                          fontFamily: "'Montserrat', sans-serif",
+                          fontWeight: 700,
+                          fontSize: 15,
+                          color: "#2E2F5B",
+                          marginBottom: 3,
+                        }}
+                      >
+                        {prod.name}
+                      </div>
+                      <div style={{ fontSize: 13, color: "#5A5C7A", lineHeight: 1.5 }}>
+                        {prod.desc}
+                      </div>
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="flex items-center gap-2 mannol-prod-btns" style={{ flexShrink: 0 }}>
+                      <button
+                        style={{
+                          backgroundColor: "transparent",
+                          color: "#2E2F5B",
+                          border: "1.5px solid #DDDFE8",
+                          borderRadius: 8,
+                          padding: "8px 14px",
+                          fontFamily: "'Montserrat', sans-serif",
+                          fontWeight: 600,
+                          fontSize: 12,
+                          cursor: "pointer",
+                          whiteSpace: "nowrap",
+                        }}
+                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#2E2F5B")}
+                        onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#DDDFE8")}
+                      >
+                        Подробнее →
+                      </button>
+                      <button
+                        style={{
+                          backgroundColor: "#FFD100",
+                          color: "#2E2F5B",
+                          border: "none",
+                          borderRadius: 8,
+                          padding: "8px 14px",
+                          fontFamily: "'Montserrat', sans-serif",
+                          fontWeight: 700,
+                          fontSize: 12,
+                          cursor: "pointer",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        Купить на Ozon
+                      </button>
+                      <button
+                        style={{
+                          backgroundColor: "#7B2FBE",
+                          color: "#FFFFFF",
+                          border: "none",
+                          borderRadius: 8,
+                          padding: "8px 14px",
+                          fontFamily: "'Montserrat', sans-serif",
+                          fontWeight: 700,
+                          fontSize: 12,
+                          cursor: "pointer",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        Wildberries
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <h2
               style={{
                 fontFamily: "'Montserrat', sans-serif",
